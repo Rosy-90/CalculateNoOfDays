@@ -1,24 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Date Picker Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DatePickerController" customModule="CalculateNoOfDays" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="hLO-YB-oJ8">
+                                <rect key="frame" x="20" y="44" width="374" height="216"/>
+                                <connections>
+                                    <action selector="startDatePickerTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="yZe-vq-pWF"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No of Days:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1Z-yf-dFk">
+                                <rect key="frame" x="126" y="711" width="162" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter start date:" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rAr-g9-qSJ">
+                                <rect key="frame" x="126" y="271" width="162" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="iWH-u9-vH9">
+                                <rect key="frame" x="20" y="340" width="374" height="216"/>
+                                <connections>
+                                    <action selector="endDatePickerTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="9r8-1N-ehO"/>
+                                </connections>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKW-EB-1eS">
+                                <rect key="frame" x="126" y="642" width="162" height="30"/>
+                                <state key="normal" title="Calculate Difference"/>
+                                <connections>
+                                    <action selector="calculateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ysn-Vs-Bzn"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter end date:" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h29-IL-aC7">
+                                <rect key="frame" x="126" y="584" width="162" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="h29-IL-aC7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="25V-46-26g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="q1Z-yf-dFk" secondAttribute="bottom" constant="130" id="381-vR-o2f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q1Z-yf-dFk" secondAttribute="trailing" constant="126" id="CA5-ZM-ZyE"/>
+                            <constraint firstItem="BKW-EB-1eS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="ESb-qm-JdX"/>
+                            <constraint firstItem="iWH-u9-vH9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Gzz-QT-6ba"/>
+                            <constraint firstItem="rAr-g9-qSJ" firstAttribute="top" secondItem="hLO-YB-oJ8" secondAttribute="bottom" constant="11" id="JIg-kt-gv4"/>
+                            <constraint firstItem="BKW-EB-1eS" firstAttribute="top" secondItem="h29-IL-aC7" secondAttribute="bottom" constant="24" id="MJI-Pg-yIW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rAr-g9-qSJ" secondAttribute="trailing" constant="126" id="ML5-jF-tB1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iWH-u9-vH9" secondAttribute="trailing" constant="20" id="NvP-id-heI"/>
+                            <constraint firstItem="q1Z-yf-dFk" firstAttribute="top" secondItem="BKW-EB-1eS" secondAttribute="bottom" constant="39" id="Rya-le-OqB"/>
+                            <constraint firstItem="h29-IL-aC7" firstAttribute="top" secondItem="iWH-u9-vH9" secondAttribute="bottom" constant="28" id="Vj3-IW-2wK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h29-IL-aC7" secondAttribute="trailing" constant="126" id="d4J-ge-KW1"/>
+                            <constraint firstItem="hLO-YB-oJ8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="djH-qL-zGS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hLO-YB-oJ8" secondAttribute="trailing" constant="20" id="n0W-UB-zhK"/>
+                            <constraint firstItem="hLO-YB-oJ8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nss-qI-jDW"/>
+                            <constraint firstItem="iWH-u9-vH9" firstAttribute="top" secondItem="rAr-g9-qSJ" secondAttribute="bottom" constant="35" id="qLp-XX-y7Z"/>
+                            <constraint firstItem="rAr-g9-qSJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="uVV-UQ-SnN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BKW-EB-1eS" secondAttribute="trailing" constant="126" id="xSa-X1-Dv1"/>
+                            <constraint firstItem="q1Z-yf-dFk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="yZu-Jg-Wp4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="endDatePicker" destination="iWH-u9-vH9" id="lmi-Jb-Wj8"/>
+                        <outlet property="endDateTextField" destination="h29-IL-aC7" id="VMR-z5-L4e"/>
+                        <outlet property="noOfDaysLabel" destination="q1Z-yf-dFk" id="YO6-fy-MFg"/>
+                        <outlet property="startDatePicker" destination="hLO-YB-oJ8" id="O8D-45-960"/>
+                        <outlet property="startDateTextField" destination="rAr-g9-qSJ" id="fHt-cz-mvX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="734.78260869565224" y="61.607142857142854"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

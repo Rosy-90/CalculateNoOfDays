@@ -42,13 +42,13 @@ class DatePickerViewModel {
             endYear = year
         }
         
-        diffDays = difference(date1: MyOwnDate(day: startDay, month: startMonth, year: startYear), date2: MyOwnDate(day: endDay, month: endMonth, year: endYear))
+        diffDays = difference(date1: MyDate(day: startDay, month: startMonth, year: startYear), date2: MyDate(day: endDay, month: endMonth, year: endYear))
         
         delegate?.didUpdate(noOfDays: diffDays)
         
     }
     
-    func difference(date1: MyOwnDate, date2: MyOwnDate) -> Int {
+    func difference(date1: MyDate, date2: MyDate) -> Int {
         
         //start date
         var noOfDaysInDate1 = date1.day + date1.year * 365

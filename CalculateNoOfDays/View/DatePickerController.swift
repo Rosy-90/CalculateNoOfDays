@@ -9,8 +9,8 @@ import UIKit
 
 class DatePickerController: UIViewController {
     
-    var viewModel = ViewModel()
-
+    var viewModel = DatePickerViewModel()
+    
     @IBOutlet weak var startDatePicker: UIDatePicker!
     
     @IBOutlet weak var startDateTextField: UITextField!
@@ -42,12 +42,12 @@ class DatePickerController: UIViewController {
         endDatePicker.datePickerMode = .date
         endDateTextField.inputView = endDatePicker
         endDateTextField.text = dateFormatter.string(from: endDatePicker.date)
-       
+        
     }
-
+    
     @IBAction func startDatePickerTapped(_ sender: UIDatePicker) {
         startDateTextField.text = dateFormatter.string(from: sender.date)
-    
+        
     }
     
     @IBAction func endDatePickerTapped(_ sender: UIDatePicker) {
@@ -81,7 +81,7 @@ extension DatePickerController: UITextFieldDelegate{
 extension DatePickerController: ViewModelDelegate {
     func didUpdate(noOfDays: Int) {
         DispatchQueue.main.async {
-            self.noOfDaysLabel.text = "\(noOfDays)"
+            self.noOfDaysLabel.text = "\(noOfDays) days"
         }
     }
 }

@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B2A92BB2670A8ED004867F4 /* DatePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A92BA2670A8ED004867F4 /* DatePickerViewModel.swift */; };
+		8B2A92BF2670C2AF004867F4 /* MyDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A92BE2670C2AF004867F4 /* MyDate.swift */; };
 		8B57B6DB266E85790016B02F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B57B6DA266E85790016B02F /* AppDelegate.swift */; };
 		8B57B6DD266E85790016B02F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B57B6DC266E85790016B02F /* SceneDelegate.swift */; };
-		8B57B6DF266E85790016B02F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B57B6DE266E85790016B02F /* ViewController.swift */; };
+		8B57B6DF266E85790016B02F /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B57B6DE266E85790016B02F /* DatePickerController.swift */; };
 		8B57B6E2266E85790016B02F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B57B6E0266E85790016B02F /* Main.storyboard */; };
 		8B57B6E4266E857A0016B02F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B57B6E3266E857A0016B02F /* Assets.xcassets */; };
 		8B57B6E7266E857A0016B02F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B57B6E5266E857A0016B02F /* LaunchScreen.storyboard */; };
@@ -35,10 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B2A92BA2670A8ED004867F4 /* DatePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewModel.swift; sourceTree = "<group>"; };
+		8B2A92BE2670C2AF004867F4 /* MyDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDate.swift; sourceTree = "<group>"; };
 		8B57B6D7266E85790016B02F /* CalculateNoOfDays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalculateNoOfDays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B57B6DA266E85790016B02F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B57B6DC266E85790016B02F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8B57B6DE266E85790016B02F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8B57B6DE266E85790016B02F /* DatePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
 		8B57B6E1266E85790016B02F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B57B6E3266E857A0016B02F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B57B6E6266E857A0016B02F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,6 +80,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B2A92BC2670C25E004867F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B57B6DE266E85790016B02F /* DatePickerController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B2A92BD2670C271004867F4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8B2A92BA2670A8ED004867F4 /* DatePickerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8B2A92C02670C2BE004867F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8B2A92BE2670C2AF004867F4 /* MyDate.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8B57B6CE266E85790016B02F = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +129,9 @@
 			children = (
 				8B57B6DA266E85790016B02F /* AppDelegate.swift */,
 				8B57B6DC266E85790016B02F /* SceneDelegate.swift */,
-				8B57B6DE266E85790016B02F /* ViewController.swift */,
+				8B2A92C02670C2BE004867F4 /* Model */,
+				8B2A92BC2670C25E004867F4 /* View */,
+				8B2A92BD2670C271004867F4 /* ViewModel */,
 				8B57B6E0266E85790016B02F /* Main.storyboard */,
 				8B57B6E3266E857A0016B02F /* Assets.xcassets */,
 				8B57B6E5266E857A0016B02F /* LaunchScreen.storyboard */,
@@ -258,9 +288,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B57B6DF266E85790016B02F /* ViewController.swift in Sources */,
+				8B2A92BB2670A8ED004867F4 /* DatePickerViewModel.swift in Sources */,
+				8B57B6DF266E85790016B02F /* DatePickerController.swift in Sources */,
 				8B57B6DB266E85790016B02F /* AppDelegate.swift in Sources */,
 				8B57B6DD266E85790016B02F /* SceneDelegate.swift in Sources */,
+				8B2A92BF2670C2AF004867F4 /* MyDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
